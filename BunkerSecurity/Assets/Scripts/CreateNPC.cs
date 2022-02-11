@@ -9,10 +9,10 @@ public class CreateNPC : ScriptableObject
     public GameObject modelGO;
     public Sprite pictureID;
     public string iDNumber = "SW001F";
-    public Gender gender = Gender.Male;
+    public NPCManager.Gender gender = NPCManager.Gender.M;
     public int age = 35;
     public float height = 5.7f;
 
 
-    public enum Gender { Male, Female }
+
 }

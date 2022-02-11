@@ -3,7 +3,7 @@
   "Assemblies": [
     {
       "FullName": "Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-02-01T12:39:00.2117361Z"
+      "LastWriteTime": "2022-02-08T12:57:48.4473101Z"
     },
     {
       "FullName": "netstandard, Version=2.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51",
@@ -19,15 +19,31 @@
     },
     {
       "FullName": "Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-02-01T12:39:00.188753Z"
-    },
-    {
-      "FullName": "Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2022-02-01T12:39:00.1862418Z"
+      "LastWriteTime": "2022-02-08T12:57:48.4503404Z"
     },
     {
       "FullName": "mscorlib, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
       "LastWriteTime": "2021-10-22T08:36:54Z"
+    },
+    {
+      "FullName": "Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2022-02-08T12:57:48.4201876Z"
+    },
+    {
+      "FullName": "UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2021-10-22T08:40:54Z"
+    },
+    {
+      "FullName": "Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2022-02-09T17:07:04.7401492Z"
+    },
+    {
+      "FullName": "mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "LastWriteTime": "2021-10-22T08:36:54Z"
+    },
+    {
+      "FullName": "Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2022-02-09T17:07:06.571662Z"
     }
   ],
   "Functions": [
@@ -62,9 +78,10 @@
       "AssemblyDependencyIndices": [
         3,
         4,
+        5,
         2,
         1,
-        5
+        6
       ]
     },
     {
@@ -76,7 +93,7 @@
         3,
         4,
         2,
-        5,
+        6,
         1
       ]
     },
@@ -90,7 +107,7 @@
         4,
         2,
         1,
-        5
+        6
       ]
     },
     {
@@ -102,7 +119,7 @@
         3,
         4,
         2,
-        5,
+        6,
         1
       ]
     },
@@ -138,7 +155,7 @@
         4,
         2,
         1,
-        5
+        6
       ]
     },
     {
@@ -150,7 +167,7 @@
         3,
         4,
         2,
-        5,
+        6,
         1
       ]
     },
@@ -164,7 +181,6 @@
         4,
         6,
         2,
-        5,
         1
       ]
     },
@@ -178,6 +194,294 @@
         4,
         2,
         1
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.ChainIKConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.ChainIKConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "5a96ad6bb0918bd441145c6b2f218cc9",
+      "LinkName": "D17F1E41F0981F8B",
+      "AssemblyDependencyIndices": [
+        7,
+        8,
+        1,
+        2,
+        3,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.BlendConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.BlendConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "3870c4c007c4d56ae2bbf13960ec7ba1",
+      "LinkName": "EEB605D5BF4115FD",
+      "AssemblyDependencyIndices": [
+        7,
+        8,
+        2,
+        3,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.DampedTransformJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.DampedTransformJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "efd37da94d3d10dfa5962830e4cfc29b",
+      "LinkName": "2D06AE12499008BC",
+      "AssemblyDependencyIndices": [
+        7,
+        8,
+        2,
+        3,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.MultiAimConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.MultiAimConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "c7b88ecfae595e7a6d0408f22e59dafd",
+      "LinkName": "FCB60251D6B64A75",
+      "AssemblyDependencyIndices": [
+        7,
+        8,
+        2,
+        3,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.MultiPositionConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.MultiPositionConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "6c463dc0f5b0b2149f3527743995047e",
+      "LinkName": "258F782D929162D0",
+      "AssemblyDependencyIndices": [
+        7,
+        8,
+        5,
+        2,
+        3,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.MultiReferentialConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.MultiReferentialConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "f99078a5d9a300ae7851ef751cde7e56",
+      "LinkName": "95D969D039EC936C",
+      "AssemblyDependencyIndices": [
+        7,
+        8,
+        2,
+        3,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.MultiParentConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.MultiParentConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "d00fb51617510a63d47c05714fd90208",
+      "LinkName": "3F33EE8471F5D9F8",
+      "AssemblyDependencyIndices": [
+        7,
+        8,
+        2,
+        3,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.MultiRotationConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.MultiRotationConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "8d43698348efbca2ef1ebd19403dc839",
+      "LinkName": "2C7E957D919E5557",
+      "AssemblyDependencyIndices": [
+        7,
+        8,
+        2,
+        3,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.OverrideTransformJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.OverrideTransformJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "d3b5379187021f3bf5da70682f9d6f13",
+      "LinkName": "5A1B018114FFE984",
+      "AssemblyDependencyIndices": [
+        7,
+        8,
+        2,
+        3,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.RigSyncSceneToStreamJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.RigSyncSceneToStreamJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "c1b58ab2a66ed4cd5b11984aaff56dd9",
+      "LinkName": "BC91ACAA17E251EE",
+      "AssemblyDependencyIndices": [
+        7,
+        8,
+        2,
+        3,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.TwistChainConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.TwistChainConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "e0374f86c581c1fab5609813e64d1216",
+      "LinkName": "046FC269A5EA2ADB",
+      "AssemblyDependencyIndices": [
+        7,
+        8,
+        2,
+        3,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.TwistCorrectionJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.TwistCorrectionJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "3c7f3da1057452c1dfa51b43e4b7db8a",
+      "LinkName": "93BA6CA7C365CF00",
+      "AssemblyDependencyIndices": [
+        7,
+        8,
+        2,
+        3,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEngine.Animations.Rigging.TwoBoneIKConstraintJob, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Animations.Rigging.TwoBoneIKConstraintJob&, Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "e2c9ca93793901fb7deab7bd3ae4b216",
+      "LinkName": "9F5ECC376B551731",
+      "AssemblyDependencyIndices": [
+        7,
+        8,
+        2,
+        3,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEditor.Animations.Rigging.MultiAimInverseConstraintJob, Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEditor.Animations.Rigging.MultiAimInverseConstraintJob&, Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "9c5e3b191f147e8f547e2148ae71d170",
+      "LinkName": "20FD37D8DECBDFA6",
+      "AssemblyDependencyIndices": [
+        7,
+        10,
+        2,
+        3,
+        8,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEditor.Animations.Rigging.MultiParentInverseConstraintJob, Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEditor.Animations.Rigging.MultiParentInverseConstraintJob&, Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "c111a17947311dcb56448a5ceb0ff02c",
+      "LinkName": "C7F3D860D6E34BD2",
+      "AssemblyDependencyIndices": [
+        7,
+        10,
+        2,
+        3,
+        8,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEditor.Animations.Rigging.MultiPositionInverseConstraintJob, Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEditor.Animations.Rigging.MultiPositionInverseConstraintJob&, Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "5b326bce6bada4d3cbfbad51b814be60",
+      "LinkName": "CA8FB46B9E70B3A2",
+      "AssemblyDependencyIndices": [
+        7,
+        10,
+        2,
+        3,
+        8,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEditor.Animations.Rigging.MultiReferentialInverseConstraintJob, Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEditor.Animations.Rigging.MultiReferentialInverseConstraintJob&, Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "d85572aed3a1cac0e56c27e2d7772f02",
+      "LinkName": "7F8C4305FFA0C3EF",
+      "AssemblyDependencyIndices": [
+        7,
+        10,
+        2,
+        3,
+        8,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEditor.Animations.Rigging.MultiRotationInverseConstraintJob, Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEditor.Animations.Rigging.MultiRotationInverseConstraintJob&, Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "fb2a7d44e5492803b7d0d1285ac04b5a",
+      "LinkName": "511E703D342EE196",
+      "AssemblyDependencyIndices": [
+        7,
+        10,
+        2,
+        3,
+        8,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEditor.Animations.Rigging.TwistChainInverseConstraintJob, Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEditor.Animations.Rigging.TwistChainInverseConstraintJob&, Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "fbe35fcd00afe5ccf4a2d538165a06a6",
+      "LinkName": "D7890560FD1F87A6",
+      "AssemblyDependencyIndices": [
+        7,
+        10,
+        2,
+        3,
+        8,
+        1,
+        9
+      ]
+    },
+    {
+      "FullName": "UnityEngine.Animations.ProcessAnimationJobStruct`1[[UnityEditor.Animations.Rigging.TwoBoneIKInverseConstraintJob, Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEditor.Animations.Rigging.TwoBoneIKInverseConstraintJob&, Unity.Animation.Rigging.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)",
+      "ModuleOptionsHash": 15221144590354301703,
+      "ModuleHash": "30465cb68108c9deac65f61ded02ff6e",
+      "LinkName": "92EA52C8350EF75D",
+      "AssemblyDependencyIndices": [
+        7,
+        10,
+        2,
+        3,
+        8,
+        1,
+        9
       ]
     }
   ]

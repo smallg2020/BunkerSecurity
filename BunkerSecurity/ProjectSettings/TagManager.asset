@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LeftHand
+  - RightHand
+  - Approval
+  - Ink
+  - Desk
+  - Stampable
   layers:
   - Default
   - TransparentFX
@@ -11,13 +17,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Grab
+  - Socket
+  - Player
+  - Stamp
+  - Stampable
+  - Room
+  - NPC
   - 
   - 
   - 
