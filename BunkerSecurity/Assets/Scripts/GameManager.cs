@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int idFlaws = 2;
     public int skillsFlawChance = 10;
     public int skillsFlaws = 0;
+    public int currentScience, currentMilitary, currentFoodProduction;
 
 
     public List<Clock> clocks = new List<Clock>();
@@ -50,6 +51,8 @@ public class GameManager : MonoBehaviour
 
     public void SetTime(float[] t)
     {
-        currentTime = t;
+        currentTime[0] = t[0];
+        currentTime[1] = t[1];
+        currentTime[2] = t[2];
     }
 }

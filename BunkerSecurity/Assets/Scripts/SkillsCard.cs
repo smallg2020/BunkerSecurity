@@ -6,7 +6,7 @@ using TMPro;
 
 public class SkillsCard : MonoBehaviour
 {
-    float scienceSkill, militarySkill, foodSkill;
+    int scienceSkill, militarySkill, foodSkill;
     [SerializeField]
     TextMeshProUGUI nameTxt, idNumberTxt;
     [SerializeField]
@@ -15,6 +15,10 @@ public class SkillsCard : MonoBehaviour
     Transform scienceSkillT, militarySkillT, foodSkillT;
     [SerializeField]
     float maxSkillScale = 7;
+
+    [SerializeField]
+    int skillFlaws = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,38 +41,78 @@ public class SkillsCard : MonoBehaviour
         idNumberTxt.text = t;
     }
 
-    public void SetScienceSkill(float v)
+    public void SetScienceSkill(int v)
     {
-        v = Mathf.Clamp01(v);
+        v = Mathf.Clamp(v, 0, 10);
         scienceSkill = v;
-        scienceSkillT.localScale = new Vector3(v * maxSkillScale, 1, 1);
+        scienceSkillT.localScale = new Vector3(v * maxSkillScale * 0.1f, 1, 1);
     }
 
-    public void SetMilitarySkill(float v)
+    public void SetMilitarySkill(int v)
     {
-        v = Mathf.Clamp01(v);
+        v = Mathf.Clamp(v, 0, 10);
         militarySkill = v;
-        militarySkillT.localScale = new Vector3(v * maxSkillScale, 1, 1);
+        militarySkillT.localScale = new Vector3(v * maxSkillScale * 0.1f, 1, 1);
     }
 
-    public void SetFoodSkill(float v)
+    public void SetFoodSkill(int v)
     {
-        v = Mathf.Clamp01(v);
+        v = Mathf.Clamp(v, 0, 10);
         foodSkill = v;
-        foodSkillT.localScale = new Vector3(v * maxSkillScale, 1, 1);
+        foodSkillT.localScale = new Vector3(v * maxSkillScale * 0.1f, 1, 1);
     }
 
-    public float GetScienceSkill()
+    public void ChangePic(Sprite s)
+    {
+        idPic.sprite = s;
+    }
+
+    public Sprite GetIDPicture()
+    {
+        return idPic.sprite;
+    }
+
+    public void ChangeName(string n)
+    {
+        nameTxt.text = n;
+    }
+
+    public string GetName()
+    {
+        return nameTxt.text;
+    }
+
+    public void ChangeIDNumber(string s)
+    {
+        idNumberTxt.text = s;
+    }
+
+    public string GetIDNumber()
+    {
+        return idNumberTxt.text;
+    }
+
+    public void UpdateSkillFlaws(int v)
+    {
+        skillFlaws += v;
+    }
+
+    public int GetSkillFlaws()
+    {
+        return skillFlaws;
+    }
+
+    public int GetScienceSkill()
     {
         return scienceSkill;
     }
 
-    public float GetMilitarySkill()
+    public int GetMilitarySkill()
     {
         return militarySkill;
     }
 
-    public float GetFoodSkill()
+    public int GetFoodSkill()
     {
         return foodSkill;
     }

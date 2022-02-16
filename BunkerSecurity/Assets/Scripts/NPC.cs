@@ -19,7 +19,7 @@ public class NPC : MonoBehaviour
     public GameObject myIDCard, mySkillsCard;
     public int myFlaws;
     [Range(0, 1)]
-    public float myScienceSkill, myMilitarySkill, myFoodSkill;
+    public int myScienceSkill, myMilitarySkill, myFoodSkill;
     public Transform rightHandT;
     public TwoBoneIKConstraint rightHandIK;
     public Transform rightHandTargetT;

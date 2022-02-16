@@ -612,9 +612,11 @@ m_ResolvedPackages:
     - 1.2.2
     - 1.2.3
     - 1.2.4
+    - 1.2.5
     compatible:
     - 1.2.4
-    verified: 1.2.4
+    - 1.2.5
+    verified: 1.2.5
   dependencies: []
   resolvedDependencies: []
   keywords: []
@@ -1057,14 +1059,16 @@ m_ResolvedPackages:
     - 1.1.27
     - 1.1.29
     - 1.1.30
+    - 1.1.31
     - 2.0.1-pre.12
     - 2.0.1-pre.18
     compatible:
     - 1.1.29
     - 1.1.30
+    - 1.1.31
     - 2.0.1-pre.12
     - 2.0.1-pre.18
-    verified: 1.1.30
+    verified: 1.1.31
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6

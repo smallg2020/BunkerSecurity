@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class DeskJobManager : MonoBehaviour
 {
+
     [SerializeField]
     int mistakesMade;
     public Transform idPosT, idPos2T, idHandPosT;
@@ -12,21 +13,34 @@ public class DeskJobManager : MonoBehaviour
     [SerializeField]
     Transform deskNPCT, acceptNPCT, rejectNPCT;
 
+    SkillsManager skillsManager;
     GameManager gameManager;
     NPCManager npcManager;
+    Computer computer;
 
     GameObject currentNPC, prevNPC;
-    GameObject currentID;
+    GameObject currentID, currentSkillsCard;
+    [SerializeField]
+    GameObject messagesPage;
     NPC npcScript;
     Scanner scanner;
+    bool shiftStarted = false;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        skillsManager = FindObjectOfType<SkillsManager>();
         npcManager = FindObjectOfType<NPCManager>();
         scanner = FindObjectOfType<Scanner>();
+        computer = FindObjectOfType<Computer>();
 
+        //restore the game status here
+        skillsManager.SetCurrentScience(gameManager.currentScience);
+        skillsManager.SetCurrentMilitary(gameManager.currentMilitary);
+        skillsManager.SetCurrentFoodProduction(gameManager.currentFoodProduction);
+
+        computer.OpenPage(messagesPage);
     }
 
     // Update is called once per frame
@@ -45,27 +59,63 @@ public class DeskJobManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (!currentNPC)
-                return;
-
-            GiveBackID();
-            npcScript.ApproveNPC();
-            npcScript.SetDest(acceptNPCT);
-            prevNPC = currentNPC;
-            currentNPC = null;
+            ApproveNPC();
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (!currentNPC)
-                return;
-
-            GiveBackID();
-            npcScript.RejectNPC();
-            npcScript.SetDest(rejectNPCT);
-            prevNPC = currentNPC;
-            currentNPC = null;
+            RejectNPC();
         }
     }
+
+    public void ApproveNPC()
+    {
+        if (!currentNPC)
+            return;
+
+        GiveBackID();
+        npcScript.SetDest(acceptNPCT);
+        prevNPC = currentNPC;
+        currentNPC = null;
+    }
+
+    public void RejectNPC()
+    {
+        if (!currentNPC)
+            return;
+
+        GiveBackID();
+        npcScript.SetDest(rejectNPCT);
+        prevNPC = currentNPC;
+        currentNPC = null;
+    }
+
+    public void StartShift()
+    {
+        if (shiftStarted)
+            return;
+
+        StartCoroutine(WorkingDeskJob());
+    }
+
+    IEnumerator WorkingDeskJob()
+    {
+        shiftStarted = true;
+        while (shiftStarted)
+        {
+            if (currentNPC)
+                yield return null;
+
+            CallNextNPC();
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
+
 
     public void CallNextNPC()
     {
@@ -85,12 +135,24 @@ public class DeskJobManager : MonoBehaviour
         currentNPC = npcManager.CreateNPC(idflaws, skillflaws);
         npcScript = currentNPC.GetComponent<NPC>();
         currentID = npcScript.myIDCard;
+        currentSkillsCard = npcScript.mySkillsCard;
         npcScript.SetDest(deskNPCT);
     }
 
-    void GiveBackID()
+    public void GiveBackID()
     {
         npcScript.Hold(currentID.transform);
+        npcScript.Hold(currentSkillsCard.transform);
+    }
+
+    public Transform GetRejectionRoomT()
+    {
+        return rejectNPCT;
+    }
+
+    public Transform GetApprovedRoomT()
+    {
+        return acceptNPCT;
     }
 
     public void UpdateMistakesMade(int v)

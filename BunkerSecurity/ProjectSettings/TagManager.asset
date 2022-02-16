@@ -10,6 +10,7 @@ TagManager:
   - Ink
   - Desk
   - Stampable
+  - Bell
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - Stampable
   - Room
   - NPC
-  - 
-  - 
+  - Approval
+  - Hand
   - 
   - 
   - 

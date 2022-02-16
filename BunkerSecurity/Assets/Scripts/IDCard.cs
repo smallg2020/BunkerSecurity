@@ -14,14 +14,27 @@ public class IDCard : MonoBehaviour
     Image idPic;
 
     NPCManager npcManager;
+    DeskJobManager deskJobM;
 
     public bool playerIsHolding = false;
     public DeskJobManager.ApprovalStatus approvalStatus = DeskJobManager.ApprovalStatus.None;
     int idFlaws = 0;
+    NPC ownerNPC;
 
     private void Start()
     {
         npcManager = FindObjectOfType<NPCManager>();
+        deskJobM = FindObjectOfType<DeskJobManager>();
+    }
+
+    public void SetOwner(NPC owningNPC)
+    {
+        ownerNPC = owningNPC;
+    }
+
+    public NPC GetOwner()
+    {
+        return ownerNPC;
     }
 
     public void ChangeName(string n)
@@ -69,6 +82,21 @@ public class IDCard : MonoBehaviour
         return idNumberTxt.text;
     }
 
+    public void UpdateApprovalStatus(DeskJobManager.ApprovalStatus newApprovalStatus)
+    {
+        approvalStatus = newApprovalStatus;
+        //print("approved = " + approvalStatus);
+        GiveBackPapers();
+        if (approvalStatus == DeskJobManager.ApprovalStatus.Rejected)
+        {
+            deskJobM.RejectNPC();
+        }
+        else
+        {
+            deskJobM.ApproveNPC();
+        }
+    }
+
     public NPCManager.Gender GetGender()
     {
         if (genderTxt.text == "F")
@@ -79,6 +107,12 @@ public class IDCard : MonoBehaviour
         {
             return NPCManager.Gender.M;
         }
+    }
+
+    void GiveBackPapers()
+    {
+        ownerNPC.Hold(transform);
+        ownerNPC.Hold(ownerNPC.mySkillsCard.transform);
     }
 
     public int GetAge()

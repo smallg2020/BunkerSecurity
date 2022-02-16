@@ -14,6 +14,8 @@ public class Scanner : MonoBehaviour
     Transform rayStartT;
     [SerializeField]
     AudioSource scanSound;
+    [SerializeField]
+    GameObject npcInfoPage;
 
 
     // Start is called before the first frame update
@@ -46,12 +48,14 @@ public class Scanner : MonoBehaviour
             if (hit.collider.TryGetComponent<NPC>(out NPC npcInfo))
             {
                 ScanNPC(npcInfo);
+                computer.OpenPage(npcInfoPage);
             }
         }
     }
 
     public void ScanNPC(NPC npcInfo)
     {
+        computer.showingInfoForNPC = npcInfo.gameObject;
         computer.npcNameTxt.text = npcInfo.myName;
         computer.npcIDNumberTxt.text = npcInfo.iDNumber;
         computer.npcGenderTxt.text = npcInfo.gender.ToString();

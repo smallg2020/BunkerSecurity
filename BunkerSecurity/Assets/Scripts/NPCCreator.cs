@@ -26,11 +26,13 @@ public class NPCCreator : MonoBehaviour
     [SerializeField]
     Camera idCamera;
 
+    GameManager gameManager;
     NPCManager npcManager;
     Sprite sss;
 
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         npcManager = FindObjectOfType<NPCManager>();
     }
 
@@ -42,13 +44,15 @@ public class NPCCreator : MonoBehaviour
         NPC npcScript = npc.GetComponent<NPC>();
         npcScript.myIDCard = id;
         npcScript.mySkillsCard = sc;
-        npcScript.idScript = id.GetComponent<IDCard>();
+        IDCard idScript = id.GetComponent<IDCard>();
+        npcScript.idScript = idScript;
+        idScript.SetOwner(npcScript);
         npcScript.Hold(id.transform);
-        FillNPCIDCard(npc, id, idFlaws);
+        FillNPCIDCard(npcScript, id, idFlaws);
         SkillsCard scScript = sc.GetComponent<SkillsCard>();
-        FillNPCSkillsCard(npcScript, scScript, skillFlaws);
+        FillNPCSkillsCard(npcScript, scScript, idScript, skillFlaws);
         npcScript.Hold(sc.transform);
-        //npcScript.UpdateFlaws(flaws);
+        npcScript.UpdateFlaws(idScript.GetIDFlaws() + scScript.GetSkillFlaws());
         return npc;
     }
 
@@ -123,9 +127,9 @@ public class NPCCreator : MonoBehaviour
         }
         double h = System.Math.Round(6 * height, 2);
         npcScript.height = (float)h;
-        npcScript.myScienceSkill = Random.Range(0f, 1f);
-        npcScript.myMilitarySkill = Random.Range(0f, 1f);
-        npcScript.myFoodSkill = Random.Range(0f, 1f);
+        npcScript.myScienceSkill = Random.Range(0, 10);
+        npcScript.myMilitarySkill = Random.Range(0, 10);
+        npcScript.myFoodSkill = Random.Range(0, 10);
         return npc;
     }
 
@@ -181,13 +185,13 @@ public class NPCCreator : MonoBehaviour
         return sc;
     }
 
-    string ChangeName(IDCard id)
+    string ChangeName(string currentName)
     {
         string newName = "";
         do
         {
             newName = GetNewName();
-        } while (newName == id.GetName());
+        } while (newName == currentName);
         return newName;
     }
 
@@ -197,7 +201,7 @@ public class NPCCreator : MonoBehaviour
         return nd;
     }
 
-    void TakePic()
+    Sprite TakePic()
     {
         int width = idCamera.targetTexture.width;
         int height = idCamera.targetTexture.height;
@@ -214,39 +218,38 @@ public class NPCCreator : MonoBehaviour
         RenderTexture.active = currentRenderTexture;
         sss = Sprite.Create(tex, new Rect(0, 0, width, height), Vector2.zero, 100);
         idCamera.enabled = false;
+        return sss;
     }
 
-    void QuickAppearanceChange(GameObject npc, IDCard iDCard)
+    Sprite QuickAppearanceChange(GameObject npc)
     {
         npc.transform.position -= Vector3.up * 5;
         GameObject pp = GenerateNPC();
-        TakePic();
-        iDCard.ChangePic(sss);
+        Sprite newPic = TakePic();
         Destroy(pp);
         npc.transform.position += Vector3.up * 5;
-        iDCard.transform.position = npc.transform.position;
-        iDCard.transform.position += Vector3.up * 1f;
+        return newPic;
     }
 
-    void FillNPCIDCard(GameObject npc, GameObject id, int flaws = 0)
+    void FillNPCIDCard(NPC npc, GameObject id, int flaws = 0)
     {
-        NPC npcScript = npc.GetComponent<NPC>();
         TakePic();
         IDCard iDCard = id.GetComponent<IDCard>();
         //we also need to store the valid picture to the NPC data here as it's not created before this point
-        npcScript.pictureID = sss;
+        npc.pictureID = sss;
 
         //for starters just make all info correct
         iDCard.ChangePic(sss);
-        iDCard.ChangeName(npcScript.myName);
-        iDCard.ChangeIDNumber(npcScript.iDNumber);
-        iDCard.ChangeGender(npcScript.gender);
-        iDCard.ChangeAge(npcScript.age);
-        iDCard.ChangeHeight(npcScript.height);
+        iDCard.ChangeName(npc.myName);
+        iDCard.ChangeIDNumber(npc.iDNumber);
+        iDCard.ChangeGender(npc.gender);
+        iDCard.ChangeAge(npc.age);
+        iDCard.ChangeHeight(npc.height);
         int days = Random.Range(0, npcManager.maxExpiryDate);
         System.DateTime d = ChangeDate(days);
         iDCard.ChangeExpiry(d);
 
+        //print("creating npc with " + flaws + " flaws");
         CreateIDCardFlaws(npc, iDCard, flaws);
     }
 
@@ -256,7 +259,7 @@ public class NPCCreator : MonoBehaviour
     /// </summary>
     /// <param name="npc"></param>
     /// <param name="sc"></param>
-    void FillNPCSkillsCard(NPC npc, SkillsCard sc, int skillFlaws = 0)
+    void FillNPCSkillsCard(NPC npc, SkillsCard sc, IDCard id, int skillFlaws = 0)
     {
         sc.SetIDPic(npc.pictureID);
         sc.SetName(npc.myName);
@@ -265,13 +268,14 @@ public class NPCCreator : MonoBehaviour
         sc.SetMilitarySkill(npc.myMilitarySkill);
         sc.SetFoodSkill(npc.myFoodSkill);
 
-        CreateSkillsCardFlaws(npc.gameObject, sc, skillFlaws);
+        CreateSkillsCardFlaws(npc, sc, id, skillFlaws);
     }
 
-    void CreateIDCardFlaws(GameObject npc, IDCard iDCard, int flaws = 0)
+    void CreateIDCardFlaws(NPC npc, IDCard iDCard, int flaws = 0)
     {
         bool[] alreadyChanged = new bool[7];
         int info, createdFlaws = 0;
+        //print("attempting to create a flaw");
         for (int i = 0; i < flaws; i++)
         {
             int tries = 0;
@@ -291,19 +295,20 @@ public class NPCCreator : MonoBehaviour
                 {
                     //change the pic
                     //print("changed id pic");
-                    QuickAppearanceChange(npc, iDCard);
+                    Sprite pic = QuickAppearanceChange(npc.gameObject);
+                    iDCard.ChangePic(pic);
                 }
                 else if (info == 1)
                 {
                     //print("changed id name");
                     //change the name                
-                    iDCard.ChangeName(ChangeName(iDCard));
+                    iDCard.ChangeName(ChangeName(npc.myName));
                 }
                 else if (info == 2)
                 {
                     //print("changed id number");
                     //change id number
-                    iDCard.ChangeIDNumber(GenerateNewIDNumber(ChangeName(iDCard)));
+                    iDCard.ChangeIDNumber(GenerateNewIDNumber(ChangeName(npc.myName)));
                 }
                 else if (info == 3)
                 {
@@ -357,13 +362,75 @@ public class NPCCreator : MonoBehaviour
                 createdFlaws++;
             }
         }
+        //print("created " + createdFlaws + " flaws");
         iDCard.UpdateIDFlaws(createdFlaws);
     }
 
-    void CreateSkillsCardFlaws(GameObject npc, SkillsCard sc, int flaws = 0)
+    void CreateSkillsCardFlaws(NPC npc, SkillsCard sc, IDCard id, int flaws = 0)
     {
+        int possibleFlaws = 3;
+        bool[] alreadyChanged = new bool[possibleFlaws];
+        int info, createdFlaws = 0;
+        //print("attempting to create a flaw");
+        for (int i = 0; i < flaws; i++)
+        {
+            int tries = 0;
+            do
+            {
+                info = Random.Range(0, possibleFlaws);
+                tries++;
+            } while (alreadyChanged[info] && tries < 50);
+            //print("changing info " + info);
+            if (alreadyChanged[info])
+            {
+                //print("already changed");
+            }
+            else
+            {
+                //picture
+                if (info == 0)
+                {
+                    //if the id card has incorrect pic we should copy that
+                    if (id.GetPicture() != npc.pictureID)
+                    {
+                        sc.ChangePic(id.GetPicture());
+                    }
+                    else
+                    {
+                        //otherwise just get a new pic
+                        Sprite pic = QuickAppearanceChange(npc.gameObject);
+                        sc.ChangePic(pic);
+                    }
+                }
+                //change the name
+                else if (info == 1)
+                {
+                    if (id.GetName() != npc.myName)
+                    {
+                        sc.ChangeName(id.GetName());
+                    }
+                    else
+                    {
+                        sc.ChangeName(GetNewName());
+                    }
+                }
+                else if (info == 2)
+                {
+                    if (id.GetIDNumber() != npc.iDNumber)
+                    {
+                        sc.ChangeIDNumber(id.GetIDNumber());
+                    }
+                    else
+                    {
+                        sc.ChangeIDNumber(GenerateNewIDNumber(ChangeName(sc.GetName())));
+                    }
+                }
+                createdFlaws++;
+                alreadyChanged[info] = true;
+            }
+            sc.UpdateSkillFlaws(flaws);
 
+        }
     }
-
 
 }

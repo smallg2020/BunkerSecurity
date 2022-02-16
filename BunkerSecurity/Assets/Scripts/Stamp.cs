@@ -45,10 +45,10 @@ public class Stamp : MonoBehaviour
             if (!hasInk)
                 return;
 
-            IDCard idCard = other.GetComponentInParent<IDCard>();
-            if (idCard)
+            if (other.TryGetComponent(out Approval approval))
             {
-                idCard.approvalStatus = approvalStatus;
+                IDCard idCard = other.GetComponentInParent<IDCard>();
+                idCard.UpdateApprovalStatus(approvalStatus);
             }
             StampText(other);
             RemoveInk();
